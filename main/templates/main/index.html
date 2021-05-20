@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{PixelName}}</title>
+</head>
+<body>
+    <a href="/main/reg/">Reg</a>
+    <h1>Pixels Database</h1>
+    {% for item in all %}
+    <p4 ><a style="color: {{ item.PixelColor }}" href="/main/{{item.id}}">{{item.name_of_PC}}</a></p4><br/>
+    <p>( {{ item.FirstCoordinate }}, {{ item.SecondCoordinate }} )</p>
+    {% endfor %}
+</body>
+</html>
