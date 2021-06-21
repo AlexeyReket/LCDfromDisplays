@@ -1,10 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>{{ PixelName }}</title>
-</head>
-<body bgcolor="{{PixelColor}}">
-
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <title>{{ PixelName }}</title>
+    </head>
+    <body bgcolor="{{PixelColor}}" id="target">
+    </body>
+    <script>
+        let socket = new WebSocket("ws://localhost:8000/ws/some_url/");
+        socket.onmessage = function (event){
+            let data = JSON.parse(event.data);
+            console.log(data);
+            document.getElementById("target").style.backgroundColor = data.colorPix;
+        }
+    </script>
 </html>
